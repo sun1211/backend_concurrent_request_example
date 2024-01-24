@@ -7,21 +7,44 @@ services:
       context: services
       dockerfile: Dockerfile
     ports:
-      - 3000
+      - "3000:3000"
     environment:
       - PORT=3000
+    depends_on:
+      - redis
+    volumes:
+      - ./services:/usr/src/app/
     networks:
       - app-network
-  # Redis Service
+
+  # Ngix Service
   nginx:
     build:
       context: nginx
       dockerfile: Dockerfile
     ports:
-      - 54000:80
+      - "54000:80"
     networks:
       - app-network
+
+  # Redis Service
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+  # PostgreSQL Service
+  postgresql:
+    build:
+      context: postgresql
+      dockerfile: Dockerfile
+    ports:
+      - "54001:5432"
+    networks:
+      - app-network
+
 networks:
   app-network:
     driver: bridge
-
