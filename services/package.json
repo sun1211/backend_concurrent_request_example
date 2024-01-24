@@ -1,0 +1,13 @@
+{
+    "name": "simple-http-server",
+    "version": "1.0.0",
+    "description": "A simple HTTP server using Node.js",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "http": "^0.0.1-security",
+        "os": "^0.1.2"
+    }
+}

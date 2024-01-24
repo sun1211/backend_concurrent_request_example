@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  # Services example
+  nodeapp:
+    build:
+      context: services
+      dockerfile: Dockerfile
+    ports:
+      - 3000
+    environment:
+      - PORT=3000
+    networks:
+      - app-network
+  # Redis Service
+  nginx:
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    ports:
+      - 54000:80
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
+
