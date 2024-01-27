@@ -129,3 +129,5 @@ Hello, World fa5121f4dce2!
 ...
 </pre>
  </details>
+
+Notes: For more information, Refer [Handling a large number of requests in a Node.js and PostgreSQL](services/README.md)
