@@ -1,4 +1,4 @@
-# High Concurrency Node.js Application with Nginx and Docker
+# High Concurrency Node.js Application with Nginx, Docker, Redis Cluster
 
 Handling 1,000,000 concurrent requests requires careful consideration of various aspects such as load balancing, optimizing Node.js performance, and configuring Nginx for high concurrency.
 Additionally, Docker can be used to containerize and scale the application.
@@ -16,8 +16,11 @@ Create an [Nginx configuration file](nginx/nginx.conf) to proxy requests to the 
 
 Create a [Dockerfile](nginx/Dockerfile)
 
+## 3. Redis Cluser:
+Refer: [How to setup redis cluster](https://github.com/sun1211/redis-cluster-tutorial)
 
-## 3. Build and Run:
+
+## 4. Build and Run:
 Build and run the Docker containers.
 
 ```
@@ -90,7 +93,7 @@ backend-example-for-millions-request-postgres-1 exited with code 1
 </pre>
  </details>
 
-## 4. How to test
+## 5. How to test
 Simulate making multiple requests to a local host.
 
 ```
